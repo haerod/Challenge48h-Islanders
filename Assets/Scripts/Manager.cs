@@ -43,11 +43,11 @@ public class Manager : MonoBehaviour
     [HideInInspector] public int currentIndex;
     private float currentTime;
     private bool isVictory;
-
+    
     //===============================================================
     // MONOBEHAVIOUR
     //===============================================================
-
+    
     private void Awake()
     {
         fadeOut.SetActive(true);
@@ -55,7 +55,7 @@ public class Manager : MonoBehaviour
         if(!instance)
             instance = this;
     }
-
+    
     private void Start()
     {
         pointsText.text = "0/" + levelPoints;
@@ -79,18 +79,18 @@ public class Manager : MonoBehaviour
         if (pointsFill.fillAmount >= 1)
             Victory();
     }
-
+    
     //===============================================================
     // PUBLIC METHODS
     //===============================================================
-
+    
     public void AddPoints(int value)
     {
         currentPoints += value;
         pointsText.text = currentPoints+"/"+levelPoints;
         currentTime = 0;
     }
-
+    
     public void CreateBuilding(int buttonIndex)
     {
         switch (buttonIndex)
@@ -116,7 +116,7 @@ public class Manager : MonoBehaviour
 
         SetButtonsActive(false);
     }
-
+    
     public void NewBuilding(int buttonIndex)
     {
         int newListIndex = Random.Range(0, levelBuildings.Count);
@@ -139,20 +139,20 @@ public class Manager : MonoBehaviour
                 break;
         }
     }
-
+    
     public void SetButtonsActive(bool value)
     {
         button1.gameObject.SetActive(value);
         button2.gameObject.SetActive(value);
         button3.gameObject.SetActive(value);
     }
-
+    
     public void RestartLevel()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
-
+    
     public void NextLevel()
     {
         fadeToBlack.SetActive(true);
@@ -161,17 +161,17 @@ public class Manager : MonoBehaviour
         else
             StartCoroutine(NextLevel_Co(0));
     }
-
+    
     IEnumerator NextLevel_Co(int index)
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(index);
     }
-
+    
     //===============================================================
     // PRIVATE METHODS
     //===============================================================
-
+    
     private void Victory()
     {
         isVictory = true;
