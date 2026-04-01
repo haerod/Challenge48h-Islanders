@@ -20,23 +20,23 @@ public class MainMenu : MonoBehaviour
         panelCredits.SetActive(false);
         fadeToBlack.SetActive(false);
     }
-
+    
     public void ClickOnCredits()
     {
         panelCredits.SetActive(true);
     }
-
+    
     public void ClickOnClose()
     {
         panelCredits.SetActive(false);
     }
-
+    
     public void ClickOnStart()
     {
         StartCoroutine(Start_Co());
         fadeToBlack.SetActive(true);
     }
-
+    
     IEnumerator Start_Co()
     {
         yield return new WaitForSeconds(1);

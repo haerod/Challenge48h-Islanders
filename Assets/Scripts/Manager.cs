@@ -64,9 +64,12 @@ public class Manager : MonoBehaviour
         NewBuilding(3);
         panelVictory.SetActive(false);
     }
-
+    
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+                StartCoroutine(NextLevel_Co(0));        
+        
         if (isVictory) return;
 
         currentTime += Time.deltaTime;
