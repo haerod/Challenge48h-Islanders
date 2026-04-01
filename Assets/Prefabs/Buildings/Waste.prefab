@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 5884318002980387983}
   - component: {fileID: 4695236174400535985}
   m_Layer: 0
-  m_Name: "D\xE9charge"
+  m_Name: Waste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

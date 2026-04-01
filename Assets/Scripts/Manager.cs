@@ -30,6 +30,7 @@ public class Manager : MonoBehaviour
     public AnimationCurve pointsCurve;
     public GameObject panelVictory;
     public GameObject fadeToBlack;
+    public GameObject fadeOut;
     public AudioSource buildingSound;
 
     public ButtonConstruction button1;
@@ -49,6 +50,8 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
+        fadeOut.SetActive(true);
+        
         if(!instance)
             instance = this;
     }
@@ -81,7 +84,7 @@ public class Manager : MonoBehaviour
     public void AddPoints(int value)
     {
         currentPoints += value;
-        pointsText.text = currentPoints.ToString()+"/"+levelPoints;
+        pointsText.text = currentPoints+"/"+levelPoints;
         currentTime = 0;
     }
 

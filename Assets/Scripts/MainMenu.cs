@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject panelCredits;
     public GameObject fadeToBlack;
+    public GameObject fadeOut;
+    
+    private void Awake()
+    {
+        fadeOut.SetActive(true);
+    }
 
     private void Start()
     {
